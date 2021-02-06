@@ -1,0 +1,10 @@
+- CORS
+- Content Negociation (JSON || XML)
+- Versioning (QueryString || Request header || Route)
+- JWT
+- Compression (Gzip) & Cache
+- EF In-Memory
+- Auto Mapper
+- Swagger
+- Custom Middleware (Response formatter)
+- Fail fast validations
