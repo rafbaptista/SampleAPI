@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserAPI.Services.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:UserAPI.Services.WebApi.Controllers.HomeController.Authenticate(UserAPI.Domain.ViewModels.LoginViewModel,UserAPI.Domain.Interfaces.Services.ITokenService,UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper)">
+            <summary>
+            Authenticate and generates token for the given credentials
+            </summary>
+            <param name="user">user information</param>
+            <response code="200">successful request</response>
+            <response code="400">incorrect data, user not found or excluded</response>
+            <returns></returns>
+        </member>
+        <member name="M:UserAPI.Services.WebApi.Controllers.UserController.Get(UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper,UserAPI.Domain.Interfaces.Repositories.IUserRepository)">
+            <summary>
+            Return a list of all users
+            </summary>
+            <returns></returns>
+            <response code="200">successful request</response>
+            <response code="500">If any error occurred while fetching database</response>
+        </member>
+        <member name="M:UserAPI.Services.WebApi.Controllers.UserController.GetById(System.Guid,UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper)">
+            <summary>
+            Return user by id or null if not found
+            </summary>
+            <param name="id">id of user (guid)</param>
+            <returns></returns>
+            <response code="200">successful request</response>
+            <response code="400">user not found</response>
+            <response code="500">internal server error</response>
+        </member>
+        <member name="M:UserAPI.Services.WebApi.Controllers.UserController.Post(UserAPI.Domain.Entities.User,UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper,UserAPI.Domain.Interfaces.Transactions.IUnitOfWork)">
+            <summary>
+            Register a user
+            </summary>
+            <param name="model">Object containg user information to be registered</param>
+            <response code="200">successful request</response>
+            <response code="400">invalid payload format or missing required fields</response>
+            <response code="500">internal server error</response>
+            <returns></returns>
+        </member>
+        <member name="M:UserAPI.Services.WebApi.Controllers.UserController.Put(System.Guid,UserAPI.Domain.Entities.User,UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper,UserAPI.Domain.Interfaces.Transactions.IUnitOfWork)">
+            <summary>
+            Updates user
+            </summary>
+            <param name="id">Id (guid) of user</param>
+            <param name="model">user object</param>
+            <response code="200">successful request</response>
+            <response code="400">invalid payload format or missing required fields</response>
+            <response code="500">internal server error</response>
+            <returns></returns>
+        </member>
+        <member name="M:UserAPI.Services.WebApi.Controllers.UserController.Delete(System.Guid,UserAPI.Domain.Interfaces.Services.IUserService,AutoMapper.IMapper,UserAPI.Domain.Interfaces.Transactions.IUnitOfWork)">
+            <summary>
+            Deletes user
+            </summary>
+            <param name="id">id (guid) of user</param>
+            <response code="200">successful request</response>
+            <response code="400">user not found</response>
+            <response code="500">internal server error</response>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
